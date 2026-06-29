@@ -1,0 +1,9 @@
+# Files and folders placed near the beginning of the image.
+# Exact file paths are matched case-insensitively.
+SYSTEM.CNF
+SLUS_000.00
+IOPRP300.IMG
+
+# Folder prefixes end with a slash.
+MODULES/
+DATA/BOOT/

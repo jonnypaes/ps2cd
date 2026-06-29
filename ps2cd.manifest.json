@@ -1,0 +1,34 @@
+{
+  "$schema": "./docs/dev/schema/ps2cd.manifest.schema.json",
+  "name": "ps2cd",
+  "displayName": "ps2cd",
+  "codename": "ps2cd",
+  "version": "0.1.0",
+  "developer": "jonnypaes",
+  "developerName": "Jonny Paes",
+  "publisher": "Jonny Paes",
+  "license": "MIT",
+  "description": "PS2 CD/DVD image builder",
+  "repository": "https://github.com/jonnypaes/ps2cd",
+  "homepage": "https://jonnypaes.github.io/ps2cd/",
+  "binaryName": "ps2cd",
+  "windowsExecutable": "ps2cd.exe",
+  "artifactPrefix": "ps2cd",
+  "windowsIcon": "favicon.ico",
+  "linuxIconSvg": "images/icons/icon.svg",
+  "linuxIconPng": "images/icons/icon.png",
+  "androidAbis": [
+    {
+      "abi": "armeabi-v7a",
+      "rustTarget": "armv7-linux-androideabi",
+      "artifact": "ps2cd-android-armeabi-v7a",
+      "tier": "legacy-32-bit-arm"
+    },
+    {
+      "abi": "arm64-v8a",
+      "rustTarget": "aarch64-linux-android",
+      "artifact": "ps2cd-android-arm64-v8a",
+      "tier": "modern-default-arm64"
+    }
+  ]
+}

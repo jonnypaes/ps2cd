@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ps2cd Web Preview</title>
+  <meta name="description" content="Build PS2 CD/DVD images locally in the browser using ps2cd WASM.">
+  <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero panel">
+      <div>
+        <p class="eyebrow">ps2cd Web Preview</p>
+        <h1>Build PS2 homebrew images in your browser.</h1>
+        <p class="lead">Load a project ZIP or folder, choose the output media, and export DVD ISO or CD BIN/CUE locally. Files stay in your browser.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="button" href="./docs/web">Docs</a>
+        <a class="button button-soft" href="https://github.com/jonnypaes/ps2cd/releases/latest">Downloads</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <section class="panel stack">
+        <div class="section-title">
+          <span>1</span>
+          <div>
+            <h2>Input</h2>
+            <p>The ZIP root must mirror the disc root. Put SYSTEM.CNF and the boot ELF at the ZIP root.</p>
+          </div>
+        </div>
+
+        <label class="dropzone" for="zip-input">
+          <strong>Project ZIP</strong>
+          <span>Recommended path. The archive root is treated as the disc root.</span>
+          <input id="zip-input" type="file" accept=".zip,application/zip,application/x-zip-compressed">
+        </label>
+
+        <label class="dropzone" for="folder-input">
+          <strong>Project folder</strong>
+          <span>Optional browser folder picker.</span>
+          <input id="folder-input" type="file" webkitdirectory multiple>
+        </label>
+
+        <div class="status-list">
+          <div class="summary" id="file-summary">No files loaded.</div>
+          <div class="summary" id="system-cnf-status">SYSTEM.CNF: missing</div>
+          <div class="summary" id="boot-logo-status">Boot logo: project, site, or built-in fallback</div>
+        </div>
+      </section>
+
+      <section class="panel stack">
+        <div class="section-title">
+          <span>2</span>
+          <div>
+            <h2>Build</h2>
+            <p>This generic page uses SYSTEM.CNF from the uploaded project. Boot-logo fallback is resolved by the site package and the ps2cd core.</p>
+          </div>
+        </div>
+
+        <label class="field">
+          <span>Output media</span>
+          <select id="media-select">
+            <option value="cd">CD BIN/CUE</option>
+            <option value="dvd">DVD ISO</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Output base name</span>
+          <input id="output-name-input" type="text" value="ps2cd" autocomplete="off">
+        </label>
+
+        <button id="build-button" type="button" class="button">Build image</button>
+      </section>
+    </section>
+
+    <section class="panel stack">
+      <div class="section-title">
+        <span>3</span>
+        <div>
+          <h2>Output</h2>
+          <p>Download generated files. Large projects may fail because browsers have memory limits.</p>
+        </div>
+      </div>
+      <div id="output-list" class="output-list"></div>
+      <pre id="log" class="log">Ready.</pre>
+    </section>
+  </main>
+
+  <script type="module" src="./src/js/app.js"></script>
+</body>
+</html>
