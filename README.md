@@ -76,7 +76,7 @@ Source publication is planned after public beta validation and compatibility fee
 
 You can drag your folder onto ps2cd for the default conversion:
 
-https://github.com/user-attachments/assets/5647c9ca-0eca-4b56-8962-0854e17593f2
+https://github.com/user-attachments/assets/df107b1b-e219-4bf6-9717-281a7a69e30e
 
 The files used in this video are available in [examples](examples/index.md).
 
